@@ -12,49 +12,101 @@ partial class LoginForm
 
     private void InitializeComponent()
     {
-        pnlBrand = new Panel(); picLogo = new PictureBox(); lblTagline = new Label();
-        lblWelcome = new Label(); lblSub = new Label(); lblEmail = new Label(); lblPass = new Label();
-        txtEmail = new TextBox(); txtPass = new TextBox(); btnLogin = new Button();
-        lblNew = new Label(); btnRegister = new Button(); lblDemo = new Label();
+        pnlLeft = new Panel(); picLogo = new PictureBox(); lblTag = new Label();
+        lblTitle = new Label(); lblEmail = new Label(); txtEmail = new TextBox();
+        lblPass = new Label(); txtPass = new TextBox(); lnkForgot = new LinkLabel();
+        btnLogin = new Button(); btnRegister = new Button(); lblDemo = new Label();
+        pnlLeft.SuspendLayout();
         ((System.ComponentModel.ISupportInitialize)picLogo).BeginInit();
-        pnlBrand.SuspendLayout(); SuspendLayout();
-        // brand panel
-        pnlBrand.BackColor = Color.FromArgb(12, 24, 50); pnlBrand.Dock = DockStyle.Left; pnlBrand.Width = 420;
-        pnlBrand.Controls.Add(picLogo); pnlBrand.Controls.Add(lblTagline);
-        picLogo.Location = new Point(25, 190); picLogo.Size = new Size(370, 78); picLogo.SizeMode = PictureBoxSizeMode.Zoom;
-        lblTagline.ForeColor = Color.FromArgb(150, 170, 205); lblTagline.Font = new Font("Segoe UI", 11F);
-        lblTagline.Location = new Point(25, 290); lblTagline.Size = new Size(370, 50); lblTagline.TextAlign = ContentAlignment.TopCenter;
-        lblTagline.Text = "Rent a car. Share your car.\nGo anywhere.";
-        // right side
-        lblWelcome.AutoSize = true; lblWelcome.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
-        lblWelcome.ForeColor = Color.FromArgb(12, 24, 50); lblWelcome.Location = new Point(460, 80); lblWelcome.Text = "Welcome back";
-        lblSub.AutoSize = true; lblSub.ForeColor = Color.FromArgb(107, 122, 153); lblSub.Location = new Point(463, 128);
-        lblSub.Text = "Sign in to continue to car-to-go";
-        lblEmail.AutoSize = true; lblEmail.Location = new Point(463, 180); lblEmail.Text = "Email";
-        txtEmail.Font = new Font("Segoe UI", 11F); txtEmail.Location = new Point(463, 202); txtEmail.Size = new Size(360, 27);
-        lblPass.AutoSize = true; lblPass.Location = new Point(463, 245); lblPass.Text = "Password";
-        txtPass.Font = new Font("Segoe UI", 11F); txtPass.Location = new Point(463, 267); txtPass.Size = new Size(360, 27); txtPass.UseSystemPasswordChar = true;
-        btnLogin.Location = new Point(463, 322); btnLogin.Size = new Size(360, 42); btnLogin.Text = "Log in"; btnLogin.Click += btnLogin_Click;
-        lblNew.AutoSize = true; lblNew.Location = new Point(463, 395); lblNew.Text = "New to car-to-go?";
-        btnRegister.Location = new Point(463, 418); btnRegister.Size = new Size(360, 38); btnRegister.Tag = "secondary";
-        btnRegister.Text = "Create an account (renter or host)"; btnRegister.Click += btnRegister_Click;
-        lblDemo.ForeColor = Color.FromArgb(107, 122, 153); lblDemo.Font = new Font("Segoe UI", 8.5F);
-        lblDemo.Location = new Point(463, 478); lblDemo.Size = new Size(360, 36);
-        //lblDemo.Text = "Demo logins (password demo123): renter@demo.com, host@demo.com\nAdmin: admin@cartogo.com / admin123";
+        SuspendLayout();
+
+        // Navy Brand Panel
+        pnlLeft.BackColor = Theme.Navy;
+        pnlLeft.Dock = DockStyle.Left;
+        pnlLeft.Size = new Size(270, 440);
+
+        picLogo.Image = Brand.Logo;
+        picLogo.Location = new Point(35, 130);
+        picLogo.Size = new Size(200, 56);
+        picLogo.SizeMode = PictureBoxSizeMode.Zoom;
+
+        lblTag.ForeColor = Color.FromArgb(203, 213, 225);
+        lblTag.Font = new Font("Segoe UI", 9.5F);
+        lblTag.Location = new Point(28, 198);
+        lblTag.Size = new Size(214, 54);
+        lblTag.Text = "Peer-to-peer car sharing.\nVerified hosts & renters.";
+        lblTag.TextAlign = ContentAlignment.TopCenter;
+
+        pnlLeft.Controls.AddRange(new Control[] { picLogo, lblTag });
+
+        // Sign-In Form
+        lblTitle.AutoSize = true;
+        lblTitle.Font = new Font("Segoe UI", 17F, FontStyle.Bold);
+        lblTitle.ForeColor = Theme.Navy;
+        lblTitle.Location = new Point(304, 28);
+        lblTitle.Text = "Welcome back";
+
+        lblEmail.AutoSize = true;
+        lblEmail.Location = new Point(304, 80);
+        lblEmail.Text = "Email";
+
+        txtEmail.Location = new Point(304, 102);
+        txtEmail.Size = new Size(310, 27);
+
+        lblPass.AutoSize = true;
+        lblPass.Location = new Point(304, 142);
+        lblPass.Text = "Password";
+
+        txtPass.Location = new Point(304, 164);
+        txtPass.Size = new Size(310, 27);
+        txtPass.UseSystemPasswordChar = true;
+
+        // Forgot password
+        lnkForgot.AutoSize = true;
+        lnkForgot.LinkColor = Theme.Blue;
+        lnkForgot.ActiveLinkColor = Theme.Navy;
+        lnkForgot.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+        lnkForgot.Location = new Point(496, 196);
+        lnkForgot.Text = "Forgot password?";
+        lnkForgot.Click += lnkForgot_Click;
+
+        btnLogin.Location = new Point(304, 232);
+        btnLogin.Size = new Size(310, 40);
+        btnLogin.Text = "Sign in";
+        btnLogin.Click += btnLogin_Click;
+
+        btnRegister.Location = new Point(304, 282);
+        btnRegister.Size = new Size(310, 38);
+        btnRegister.Tag = "secondary";
+        btnRegister.Text = "Create an account";
+        btnRegister.Click += btnRegister_Click;
+
+        lblDemo.ForeColor = Theme.Muted;
+        lblDemo.Font = new Font("Segoe UI", 8.5F);
+        lblDemo.Location = new Point(304, 336);
+        lblDemo.Size = new Size(310, 76);
+        //lblDemo.Text = "Demo accounts:\n• Renter: renter@demo.com / demo123\n• Host: host@demo.com / demo123\n• Admin: admin@cartogo.com / admin123";
+
         AcceptButton = btnLogin;
         AutoScaleMode = AutoScaleMode.Font;
-        BackColor = Color.White;
-        ClientSize = new Size(860, 540);
-        FormBorderStyle = FormBorderStyle.FixedSingle; MaximizeBox = false;
-        StartPosition = FormStartPosition.CenterScreen; Text = "car-to-go";
-        Controls.AddRange(new Control[] { lblWelcome, lblSub, lblEmail, txtEmail, lblPass, txtPass, btnLogin, lblNew, btnRegister, lblDemo, pnlBrand });
+        ClientSize = new Size(650, 440);
+        FormBorderStyle = FormBorderStyle.FixedDialog;
+        MaximizeBox = false;
+        MinimizeBox = false;
+        StartPosition = FormStartPosition.CenterScreen;
+        Text = "Sign in";
+        Controls.AddRange(new Control[] { pnlLeft, lblTitle, lblEmail, txtEmail, lblPass, txtPass, lnkForgot, btnLogin, btnRegister, lblDemo });
+
+        pnlLeft.ResumeLayout(false);
         ((System.ComponentModel.ISupportInitialize)picLogo).EndInit();
-        pnlBrand.ResumeLayout(false); ResumeLayout(false); PerformLayout();
+        ResumeLayout(false);
+        PerformLayout();
     }
 
-    private Panel pnlBrand;
+    private Panel pnlLeft;
     private PictureBox picLogo;
-    private Label lblTagline, lblWelcome, lblSub, lblEmail, lblPass, lblNew, lblDemo;
+    private Label lblTag, lblTitle, lblEmail, lblPass, lblDemo;
     private TextBox txtEmail, txtPass;
+    private LinkLabel lnkForgot;
     private Button btnLogin, btnRegister;
 }

@@ -211,7 +211,7 @@ IF OBJECT_ID('dbo.AuditLogs','U') IS NULL CREATE TABLE dbo.AuditLogs(
         VerificationNote = (string)r["VerificationNote"],
         IsDisabled = (bool)r["IsDisabled"],
         DisableReason = (string)r["DisableReason"],
-        AvgRating = (double)r["RAvg"],
+        AvgRating = Convert.ToDouble(r["RAvg"]),
         RatingCount = (int)r["RCnt"],
         CreatedAt = (DateTime)r["CreatedAt"]
     };
@@ -400,7 +400,7 @@ LEFT JOIN (SELECT CarId, AVG(CAST(Rating AS FLOAT)) AS AvgR, COUNT(*) AS Cnt FRO
         Deposit = (decimal)r["Deposit"],
         Available = (bool)r["Available"],
         HostName = (string)r["HostName"],
-        AvgRating = (double)r["AvgR"],
+        AvgRating = Convert.ToDouble(r["AvgR"]),
         RatingCount = (int)r["Cnt"],
         PhotoCount = (int)r["PhotoCount"],
         IsFavorite = (int)r["IsFav"] == 1
@@ -527,7 +527,7 @@ FROM dbo.Bookings b JOIN dbo.Cars c ON c.Id=b.CarId JOIN dbo.Users u ON u.Id=";
         DisputeResolution = (string)r["DisputeResolution"],
         CarName = (string)r["CarName"],
         OtherName = (string)r["OtherName"],
-        OtherRating = (double)r["RenterAvg"],
+        OtherRating = Convert.ToDouble(r["RenterAvg"]),
         OtherRatingCount = (int)r["RenterCnt"]
     };
 

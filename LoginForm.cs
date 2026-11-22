@@ -34,4 +34,13 @@ public partial class LoginForm : ThemedForm
             DialogResult = DialogResult.OK;
         }
     }
+    private void lnkForgot_Click(object? sender, EventArgs e)
+    {
+        using var d = new ForgotPasswordDialog(txtEmail.Text);
+        if (d.ShowDialog(this) == DialogResult.OK)
+        {
+            txtPass.Clear();
+            txtPass.Focus();
+        }
+    }
 }
