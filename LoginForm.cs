@@ -1,19 +1,26 @@
 namespace DriveMate;
 
-public partial class LoginForm : ThemedForm
+public partial class LoginForm : CardForm
 {
     public User? User { get; private set; }
+
+    protected override RoundPanel? Card => pnlCard;
 
     public LoginForm()
     {
         InitializeComponent();
-        picLogo.Image = Brand.Logo;
+        picLogo.Image = Brand.LoginLogo;
     }
 
     protected override void OnLoad(EventArgs e)
     {
         base.OnLoad(e);
-        BackColor = Color.White;   
+
+        // Login-specific button look (overrides the shared bold 9pt default)
+        btnLogin.Font = new Font("Segoe UI", 10.5F);
+        btnRegister.Font = new Font("Segoe UI", 10.5F);
+
+        ActiveControl = txtEmail;
     }
 
     private void btnLogin_Click(object? sender, EventArgs e)

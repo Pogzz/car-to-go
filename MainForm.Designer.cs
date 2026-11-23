@@ -12,7 +12,6 @@ partial class MainForm
 
     private void InitializeComponent()
     {
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
         pnlTop = new Panel();
         picBrand = new PictureBox();
         lblUser = new Label();
@@ -118,7 +117,7 @@ partial class MainForm
         // 
         // pnlTop
         // 
-        pnlTop.BackColor = Color.FromArgb(12, 24, 50);
+        pnlTop.BackColor = Color.FromArgb(16, 0, 1);
         pnlTop.Controls.Add(picBrand);
         pnlTop.Controls.Add(lblUser);
         pnlTop.Controls.Add(btnNotifs);
@@ -127,7 +126,7 @@ partial class MainForm
         pnlTop.Dock = DockStyle.Top;
         pnlTop.Location = new Point(0, 0);
         pnlTop.Name = "pnlTop";
-        pnlTop.Size = new Size(1140, 62);
+        pnlTop.Size = new Size(1902, 62);
         pnlTop.TabIndex = 1;
         // 
         // picBrand
@@ -151,7 +150,7 @@ partial class MainForm
         // btnNotifs
         // 
         btnNotifs.Dock = DockStyle.Right;
-        btnNotifs.Location = new Point(775, 0);
+        btnNotifs.Location = new Point(1537, 0);
         btnNotifs.Name = "btnNotifs";
         btnNotifs.Size = new Size(135, 62);
         btnNotifs.TabIndex = 2;
@@ -162,7 +161,7 @@ partial class MainForm
         // btnProfile
         // 
         btnProfile.Dock = DockStyle.Right;
-        btnProfile.Location = new Point(910, 0);
+        btnProfile.Location = new Point(1672, 0);
         btnProfile.Name = "btnProfile";
         btnProfile.Size = new Size(125, 62);
         btnProfile.TabIndex = 3;
@@ -173,7 +172,7 @@ partial class MainForm
         // btnLogout
         // 
         btnLogout.Dock = DockStyle.Right;
-        btnLogout.Location = new Point(1035, 0);
+        btnLogout.Location = new Point(1797, 0);
         btnLogout.Name = "btnLogout";
         btnLogout.Size = new Size(105, 62);
         btnLogout.TabIndex = 4;
@@ -196,7 +195,7 @@ partial class MainForm
         tabs.Location = new Point(0, 62);
         tabs.Name = "tabs";
         tabs.SelectedIndex = 0;
-        tabs.Size = new Size(1140, 658);
+        tabs.Size = new Size(1902, 993);
         tabs.TabIndex = 0;
         // 
         // tabBrowse
@@ -208,7 +207,7 @@ partial class MainForm
         tabBrowse.Location = new Point(4, 29);
         tabBrowse.Name = "tabBrowse";
         tabBrowse.Padding = new Padding(12);
-        tabBrowse.Size = new Size(1132, 625);
+        tabBrowse.Size = new Size(1894, 960);
         tabBrowse.TabIndex = 0;
         tabBrowse.Text = "Browse cars";
         // 
@@ -219,7 +218,7 @@ partial class MainForm
         flowCars.Location = new Point(12, 180);
         flowCars.Name = "flowCars";
         flowCars.Padding = new Padding(0, 6, 0, 12);
-        flowCars.Size = new Size(1108, 433);
+        flowCars.Size = new Size(1870, 768);
         flowCars.TabIndex = 0;
         // 
         // lblResults
@@ -227,7 +226,7 @@ partial class MainForm
         lblResults.Dock = DockStyle.Top;
         lblResults.Location = new Point(12, 154);
         lblResults.Name = "lblResults";
-        lblResults.Size = new Size(1108, 26);
+        lblResults.Size = new Size(1870, 26);
         lblResults.TabIndex = 1;
         lblResults.TextAlign = ContentAlignment.MiddleLeft;
         // 
@@ -237,7 +236,7 @@ partial class MainForm
         flowChips.Location = new Point(12, 108);
         flowChips.Name = "flowChips";
         flowChips.Padding = new Padding(2, 8, 0, 4);
-        flowChips.Size = new Size(1108, 46);
+        flowChips.Size = new Size(1870, 46);
         flowChips.TabIndex = 2;
         flowChips.WrapContents = false;
         // 
@@ -263,7 +262,7 @@ partial class MainForm
         pnlFilter.Location = new Point(12, 12);
         pnlFilter.Name = "pnlFilter";
         pnlFilter.Padding = new Padding(12, 8, 12, 8);
-        pnlFilter.Size = new Size(1108, 96);
+        pnlFilter.Size = new Size(1870, 96);
         pnlFilter.TabIndex = 3;
         // 
         // lblCity
@@ -408,7 +407,7 @@ partial class MainForm
         tabTrips.Location = new Point(4, 29);
         tabTrips.Name = "tabTrips";
         tabTrips.Padding = new Padding(12);
-        tabTrips.Size = new Size(192, 67);
+        tabTrips.Size = new Size(1894, 960);
         tabTrips.TabIndex = 1;
         tabTrips.Text = "My trips";
         // 
@@ -419,7 +418,7 @@ partial class MainForm
         gridTrips.Location = new Point(12, 12);
         gridTrips.Name = "gridTrips";
         gridTrips.RowHeadersWidth = 51;
-        gridTrips.Size = new Size(168, 0);
+        gridTrips.Size = new Size(1870, 886);
         gridTrips.TabIndex = 0;
         // 
         // pnlTripBtns
@@ -431,10 +430,10 @@ partial class MainForm
         pnlTripBtns.Controls.Add(btnTripPhotos);
         pnlTripBtns.Controls.Add(btnRate);
         pnlTripBtns.Dock = DockStyle.Bottom;
-        pnlTripBtns.Location = new Point(12, 5);
+        pnlTripBtns.Location = new Point(12, 898);
         pnlTripBtns.Name = "pnlTripBtns";
         pnlTripBtns.Padding = new Padding(0, 8, 0, 0);
-        pnlTripBtns.Size = new Size(168, 50);
+        pnlTripBtns.Size = new Size(1870, 50);
         pnlTripBtns.TabIndex = 1;
         // 
         // btnPay
@@ -449,7 +448,7 @@ partial class MainForm
         // 
         // btnCancelTrip
         // 
-        btnCancelTrip.Location = new Point(3, 51);
+        btnCancelTrip.Location = new Point(124, 11);
         btnCancelTrip.Name = "btnCancelTrip";
         btnCancelTrip.Size = new Size(125, 34);
         btnCancelTrip.TabIndex = 1;
@@ -459,7 +458,7 @@ partial class MainForm
         // 
         // btnTripChat
         // 
-        btnTripChat.Location = new Point(3, 91);
+        btnTripChat.Location = new Point(255, 11);
         btnTripChat.Name = "btnTripChat";
         btnTripChat.Size = new Size(115, 34);
         btnTripChat.TabIndex = 2;
@@ -469,7 +468,7 @@ partial class MainForm
         // 
         // btnDispute
         // 
-        btnDispute.Location = new Point(3, 131);
+        btnDispute.Location = new Point(376, 11);
         btnDispute.Name = "btnDispute";
         btnDispute.Size = new Size(145, 34);
         btnDispute.TabIndex = 3;
@@ -479,7 +478,7 @@ partial class MainForm
         // 
         // btnTripPhotos
         // 
-        btnTripPhotos.Location = new Point(3, 171);
+        btnTripPhotos.Location = new Point(527, 11);
         btnTripPhotos.Name = "btnTripPhotos";
         btnTripPhotos.Size = new Size(135, 34);
         btnTripPhotos.TabIndex = 4;
@@ -489,7 +488,7 @@ partial class MainForm
         // 
         // btnRate
         // 
-        btnRate.Location = new Point(3, 211);
+        btnRate.Location = new Point(668, 11);
         btnRate.Name = "btnRate";
         btnRate.Size = new Size(120, 34);
         btnRate.TabIndex = 5;
@@ -503,7 +502,7 @@ partial class MainForm
         tabMyCars.Location = new Point(4, 29);
         tabMyCars.Name = "tabMyCars";
         tabMyCars.Padding = new Padding(12);
-        tabMyCars.Size = new Size(192, 67);
+        tabMyCars.Size = new Size(1894, 960);
         tabMyCars.TabIndex = 2;
         tabMyCars.Text = "My cars";
         // 
@@ -514,7 +513,7 @@ partial class MainForm
         gridMyCars.Location = new Point(12, 12);
         gridMyCars.Name = "gridMyCars";
         gridMyCars.RowHeadersWidth = 51;
-        gridMyCars.Size = new Size(168, 0);
+        gridMyCars.Size = new Size(1870, 886);
         gridMyCars.TabIndex = 0;
         // 
         // pnlCarBtns
@@ -524,10 +523,10 @@ partial class MainForm
         pnlCarBtns.Controls.Add(btnToggleCar);
         pnlCarBtns.Controls.Add(btnDelCar);
         pnlCarBtns.Dock = DockStyle.Bottom;
-        pnlCarBtns.Location = new Point(12, 5);
+        pnlCarBtns.Location = new Point(12, 898);
         pnlCarBtns.Name = "pnlCarBtns";
         pnlCarBtns.Padding = new Padding(0, 8, 0, 0);
-        pnlCarBtns.Size = new Size(168, 50);
+        pnlCarBtns.Size = new Size(1870, 50);
         pnlCarBtns.TabIndex = 1;
         // 
         // btnAddCar
@@ -541,7 +540,7 @@ partial class MainForm
         // 
         // btnEditCar
         // 
-        btnEditCar.Location = new Point(3, 51);
+        btnEditCar.Location = new Point(129, 11);
         btnEditCar.Name = "btnEditCar";
         btnEditCar.Size = new Size(115, 34);
         btnEditCar.TabIndex = 1;
@@ -551,7 +550,7 @@ partial class MainForm
         // 
         // btnToggleCar
         // 
-        btnToggleCar.Location = new Point(3, 91);
+        btnToggleCar.Location = new Point(250, 11);
         btnToggleCar.Name = "btnToggleCar";
         btnToggleCar.Size = new Size(155, 34);
         btnToggleCar.TabIndex = 2;
@@ -561,7 +560,7 @@ partial class MainForm
         // 
         // btnDelCar
         // 
-        btnDelCar.Location = new Point(3, 131);
+        btnDelCar.Location = new Point(411, 11);
         btnDelCar.Name = "btnDelCar";
         btnDelCar.Size = new Size(120, 34);
         btnDelCar.TabIndex = 3;
@@ -577,7 +576,7 @@ partial class MainForm
         tabRequests.Location = new Point(4, 29);
         tabRequests.Name = "tabRequests";
         tabRequests.Padding = new Padding(12);
-        tabRequests.Size = new Size(192, 67);
+        tabRequests.Size = new Size(1894, 960);
         tabRequests.TabIndex = 3;
         tabRequests.Text = "Booking requests";
         // 
@@ -588,7 +587,7 @@ partial class MainForm
         gridReqs.Location = new Point(12, 44);
         gridReqs.Name = "gridReqs";
         gridReqs.RowHeadersWidth = 51;
-        gridReqs.Size = new Size(168, 0);
+        gridReqs.Size = new Size(1870, 854);
         gridReqs.TabIndex = 0;
         // 
         // pnlReqBtns
@@ -602,10 +601,10 @@ partial class MainForm
         pnlReqBtns.Controls.Add(btnCalendar);
         pnlReqBtns.Controls.Add(btnReqPhotos);
         pnlReqBtns.Dock = DockStyle.Bottom;
-        pnlReqBtns.Location = new Point(12, 5);
+        pnlReqBtns.Location = new Point(12, 898);
         pnlReqBtns.Name = "pnlReqBtns";
         pnlReqBtns.Padding = new Padding(0, 8, 0, 0);
-        pnlReqBtns.Size = new Size(168, 50);
+        pnlReqBtns.Size = new Size(1870, 50);
         pnlReqBtns.TabIndex = 1;
         // 
         // btnApprove
@@ -620,7 +619,7 @@ partial class MainForm
         // 
         // btnDecline
         // 
-        btnDecline.Location = new Point(3, 51);
+        btnDecline.Location = new Point(114, 11);
         btnDecline.Name = "btnDecline";
         btnDecline.Size = new Size(100, 34);
         btnDecline.TabIndex = 1;
@@ -630,7 +629,7 @@ partial class MainForm
         // 
         // btnStart
         // 
-        btnStart.Location = new Point(3, 91);
+        btnStart.Location = new Point(220, 11);
         btnStart.Name = "btnStart";
         btnStart.Size = new Size(140, 34);
         btnStart.TabIndex = 2;
@@ -639,7 +638,7 @@ partial class MainForm
         // 
         // btnEnd
         // 
-        btnEnd.Location = new Point(3, 131);
+        btnEnd.Location = new Point(366, 11);
         btnEnd.Name = "btnEnd";
         btnEnd.Size = new Size(135, 34);
         btnEnd.TabIndex = 3;
@@ -649,7 +648,7 @@ partial class MainForm
         // 
         // btnReqChat
         // 
-        btnReqChat.Location = new Point(3, 171);
+        btnReqChat.Location = new Point(507, 11);
         btnReqChat.Name = "btnReqChat";
         btnReqChat.Size = new Size(105, 34);
         btnReqChat.TabIndex = 4;
@@ -659,7 +658,7 @@ partial class MainForm
         // 
         // btnRateRenter
         // 
-        btnRateRenter.Location = new Point(3, 211);
+        btnRateRenter.Location = new Point(618, 11);
         btnRateRenter.Name = "btnRateRenter";
         btnRateRenter.Size = new Size(115, 34);
         btnRateRenter.TabIndex = 5;
@@ -669,7 +668,7 @@ partial class MainForm
         // 
         // btnCalendar
         // 
-        btnCalendar.Location = new Point(3, 251);
+        btnCalendar.Location = new Point(739, 11);
         btnCalendar.Name = "btnCalendar";
         btnCalendar.Size = new Size(130, 34);
         btnCalendar.TabIndex = 6;
@@ -679,7 +678,7 @@ partial class MainForm
         // 
         // btnReqPhotos
         // 
-        btnReqPhotos.Location = new Point(3, 291);
+        btnReqPhotos.Location = new Point(875, 11);
         btnReqPhotos.Name = "btnReqPhotos";
         btnReqPhotos.Size = new Size(135, 34);
         btnReqPhotos.TabIndex = 7;
@@ -693,7 +692,7 @@ partial class MainForm
         lblEarnings.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
         lblEarnings.Location = new Point(12, 12);
         lblEarnings.Name = "lblEarnings";
-        lblEarnings.Size = new Size(168, 32);
+        lblEarnings.Size = new Size(1870, 32);
         lblEarnings.TabIndex = 2;
         // 
         // tabVerify
@@ -704,7 +703,7 @@ partial class MainForm
         tabVerify.Location = new Point(4, 29);
         tabVerify.Name = "tabVerify";
         tabVerify.Padding = new Padding(12);
-        tabVerify.Size = new Size(192, 67);
+        tabVerify.Size = new Size(1894, 960);
         tabVerify.TabIndex = 4;
         tabVerify.Text = "Users && verification";
         // 
@@ -715,7 +714,7 @@ partial class MainForm
         gridUsers.Location = new Point(12, 52);
         gridUsers.Name = "gridUsers";
         gridUsers.RowHeadersWidth = 51;
-        gridUsers.Size = new Size(168, 0);
+        gridUsers.Size = new Size(1870, 846);
         gridUsers.TabIndex = 0;
         // 
         // pnlVerifyBtns
@@ -725,10 +724,10 @@ partial class MainForm
         pnlVerifyBtns.Controls.Add(btnRejectUser);
         pnlVerifyBtns.Controls.Add(btnToggleDisable);
         pnlVerifyBtns.Dock = DockStyle.Bottom;
-        pnlVerifyBtns.Location = new Point(12, 5);
+        pnlVerifyBtns.Location = new Point(12, 898);
         pnlVerifyBtns.Name = "pnlVerifyBtns";
         pnlVerifyBtns.Padding = new Padding(0, 8, 0, 0);
-        pnlVerifyBtns.Size = new Size(168, 50);
+        pnlVerifyBtns.Size = new Size(1870, 50);
         pnlVerifyBtns.TabIndex = 1;
         // 
         // btnViewDocs
@@ -742,7 +741,7 @@ partial class MainForm
         // 
         // btnApproveUser
         // 
-        btnApproveUser.Location = new Point(3, 51);
+        btnApproveUser.Location = new Point(154, 11);
         btnApproveUser.Name = "btnApproveUser";
         btnApproveUser.Size = new Size(115, 34);
         btnApproveUser.TabIndex = 1;
@@ -752,7 +751,7 @@ partial class MainForm
         // 
         // btnRejectUser
         // 
-        btnRejectUser.Location = new Point(3, 91);
+        btnRejectUser.Location = new Point(275, 11);
         btnRejectUser.Name = "btnRejectUser";
         btnRejectUser.Size = new Size(110, 34);
         btnRejectUser.TabIndex = 2;
@@ -762,7 +761,7 @@ partial class MainForm
         // 
         // btnToggleDisable
         // 
-        btnToggleDisable.Location = new Point(3, 131);
+        btnToggleDisable.Location = new Point(391, 11);
         btnToggleDisable.Name = "btnToggleDisable";
         btnToggleDisable.Size = new Size(150, 34);
         btnToggleDisable.TabIndex = 3;
@@ -777,7 +776,7 @@ partial class MainForm
         pnlVerifyFilter.Dock = DockStyle.Top;
         pnlVerifyFilter.Location = new Point(12, 12);
         pnlVerifyFilter.Name = "pnlVerifyFilter";
-        pnlVerifyFilter.Size = new Size(168, 40);
+        pnlVerifyFilter.Size = new Size(1870, 40);
         pnlVerifyFilter.TabIndex = 2;
         // 
         // lblVerifyFilter
@@ -794,7 +793,7 @@ partial class MainForm
         // 
         cboVerifyFilter.DropDownStyle = ComboBoxStyle.DropDownList;
         cboVerifyFilter.Items.AddRange(new object[] { "Pending", "Verified", "Rejected", "Disabled", "All" });
-        cboVerifyFilter.Location = new Point(3, 31);
+        cboVerifyFilter.Location = new Point(59, 3);
         cboVerifyFilter.Name = "cboVerifyFilter";
         cboVerifyFilter.Size = new Size(150, 28);
         cboVerifyFilter.TabIndex = 1;
@@ -807,7 +806,7 @@ partial class MainForm
         tabDisputes.Location = new Point(4, 29);
         tabDisputes.Name = "tabDisputes";
         tabDisputes.Padding = new Padding(12);
-        tabDisputes.Size = new Size(192, 67);
+        tabDisputes.Size = new Size(1894, 960);
         tabDisputes.TabIndex = 5;
         tabDisputes.Text = "Damage disputes";
         // 
@@ -818,7 +817,7 @@ partial class MainForm
         gridDisputes.Location = new Point(12, 12);
         gridDisputes.Name = "gridDisputes";
         gridDisputes.RowHeadersWidth = 51;
-        gridDisputes.Size = new Size(168, 0);
+        gridDisputes.Size = new Size(1870, 886);
         gridDisputes.TabIndex = 0;
         // 
         // pnlDisputeBtns
@@ -826,10 +825,10 @@ partial class MainForm
         pnlDisputeBtns.Controls.Add(btnDisputePhotos);
         pnlDisputeBtns.Controls.Add(btnResolveDispute);
         pnlDisputeBtns.Dock = DockStyle.Bottom;
-        pnlDisputeBtns.Location = new Point(12, 5);
+        pnlDisputeBtns.Location = new Point(12, 898);
         pnlDisputeBtns.Name = "pnlDisputeBtns";
         pnlDisputeBtns.Padding = new Padding(0, 8, 0, 0);
-        pnlDisputeBtns.Size = new Size(168, 50);
+        pnlDisputeBtns.Size = new Size(1870, 50);
         pnlDisputeBtns.TabIndex = 1;
         // 
         // btnDisputePhotos
@@ -844,7 +843,7 @@ partial class MainForm
         // 
         // btnResolveDispute
         // 
-        btnResolveDispute.Location = new Point(3, 51);
+        btnResolveDispute.Location = new Point(184, 11);
         btnResolveDispute.Name = "btnResolveDispute";
         btnResolveDispute.Size = new Size(165, 34);
         btnResolveDispute.TabIndex = 1;
@@ -858,7 +857,7 @@ partial class MainForm
         tabAudit.Location = new Point(4, 29);
         tabAudit.Name = "tabAudit";
         tabAudit.Padding = new Padding(12);
-        tabAudit.Size = new Size(192, 67);
+        tabAudit.Size = new Size(1894, 960);
         tabAudit.TabIndex = 6;
         tabAudit.Text = "Audit log";
         // 
@@ -869,7 +868,7 @@ partial class MainForm
         gridAudit.Location = new Point(12, 12);
         gridAudit.Name = "gridAudit";
         gridAudit.RowHeadersWidth = 51;
-        gridAudit.Size = new Size(168, 43);
+        gridAudit.Size = new Size(1870, 936);
         gridAudit.TabIndex = 0;
         // 
         // tabStats
@@ -879,7 +878,7 @@ partial class MainForm
         tabStats.Location = new Point(4, 29);
         tabStats.Name = "tabStats";
         tabStats.Padding = new Padding(16);
-        tabStats.Size = new Size(192, 67);
+        tabStats.Size = new Size(1894, 960);
         tabStats.TabIndex = 7;
         tabStats.Text = "Overview";
         // 
@@ -889,7 +888,7 @@ partial class MainForm
         flowStats.Location = new Point(16, 52);
         flowStats.Name = "flowStats";
         flowStats.Padding = new Padding(0, 8, 0, 0);
-        flowStats.Size = new Size(160, 0);
+        flowStats.Size = new Size(1862, 892);
         flowStats.TabIndex = 0;
         // 
         // lblStatsTitle
@@ -898,7 +897,7 @@ partial class MainForm
         lblStatsTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
         lblStatsTitle.Location = new Point(16, 16);
         lblStatsTitle.Name = "lblStatsTitle";
-        lblStatsTitle.Size = new Size(160, 36);
+        lblStatsTitle.Size = new Size(1862, 36);
         lblStatsTitle.TabIndex = 1;
         lblStatsTitle.Text = "Platform snapshot";
         // 
@@ -907,7 +906,7 @@ partial class MainForm
         tabProfile.Location = new Point(4, 29);
         tabProfile.Name = "tabProfile";
         tabProfile.Padding = new Padding(16);
-        tabProfile.Size = new Size(192, 67);
+        tabProfile.Size = new Size(1894, 960);
         tabProfile.TabIndex = 8;
         tabProfile.Text = "My account";
         // 
@@ -915,10 +914,10 @@ partial class MainForm
         // 
         AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(1140, 720);
+        ClientSize = new Size(1902, 1055);
         Controls.Add(tabs);
         Controls.Add(pnlTop);
-        Icon = (Icon)resources.GetObject("$this.Icon");
+        if (Brand.AppIcon != null) Icon = Brand.AppIcon;
         MinimumSize = new Size(940, 620);
         Name = "MainForm";
         StartPosition = FormStartPosition.CenterScreen;

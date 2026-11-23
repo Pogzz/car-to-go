@@ -16,6 +16,9 @@ public partial class MainForm : ThemedForm
     Label lblProfStatus = new();
     Button btnResubmitDocs = new();
 
+    // how it works tab
+    TabPage tabHow = new() { Text = "How It Works", Name = "tabHow", Padding = new Padding(0) };
+
     public MainForm(User user)
     {
         me = user;
@@ -25,6 +28,7 @@ public partial class MainForm : ThemedForm
         dtpFrom.Value = DateTime.Today.AddDays(1); dtpTo.Value = DateTime.Today.AddDays(3);
 
         BuildProfileTab();
+        BuildHowItWorksTab();
         RefreshMe();
 
         switch (me.Role)
@@ -47,6 +51,9 @@ public partial class MainForm : ThemedForm
                 cboVerifyFilter.SelectedIndex = 0; LoadDisputes(); LoadAudit(); LoadStats();
                 break;
         }
+
+        // 'How it works' sits right after the first tab
+        tabs.TabPages.Insert(Math.Min(1, tabs.TabPages.Count), tabHow);
 
         // hide my account tab
         tabs.TabPages.Remove(tabProfile);
@@ -151,8 +158,8 @@ public partial class MainForm : ThemedForm
 
     static void StyleChip(RadioButton r)
     {
-        r.BackColor = r.Checked ? Theme.Blue : Color.White;
-        r.ForeColor = r.Checked ? Color.White : Theme.Navy;
+        r.BackColor = r.Checked ? Theme.Red : Color.White;
+        r.ForeColor = r.Checked ? Color.White : Theme.Red;
     }
 
     void LoadCars()
@@ -627,6 +634,14 @@ public partial class MainForm : ThemedForm
             card.Controls.AddRange(new Control[] { l2, l1, bar });
             flowStats.Controls.Add(card);
         }
+    }
+
+    // ================= HOW IT WORKS =================
+    void BuildHowItWorksTab()
+    {
+        tabHow.UseVisualStyleBackColor = false;
+        tabHow.BackColor = Theme.Ink;
+        tabHow.Controls.Add(new Works());
     }
 
     // ================= MY ACCOUNT =================

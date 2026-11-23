@@ -5,15 +5,23 @@ namespace DriveMate;
 /// <summary>car-to-go colour palette and control styling (taken from the logo).</summary>
 public static class Theme
 {
-    public static readonly Color Navy = ColorTranslator.FromHtml("#0C1832");
-    public static readonly Color NavyLight = ColorTranslator.FromHtml("#16264A");
-    public static readonly Color Blue = ColorTranslator.FromHtml("#1E8FFF");
+    public static readonly Color Navy = ColorTranslator.FromHtml("#d92f34");
+    public static readonly Color NavyLight = ColorTranslator.FromHtml("#d92f34");
+    public static readonly Color Blue = ColorTranslator.FromHtml("#d92f34");
     public static readonly Color Orange = ColorTranslator.FromHtml("#FF7A1A");
     public static readonly Color Green = ColorTranslator.FromHtml("#16A34A");
     public static readonly Color Red = ColorTranslator.FromHtml("#DC2626");
     public static readonly Color Bg = ColorTranslator.FromHtml("#F2F5FA");
     public static readonly Color Line = ColorTranslator.FromHtml("#DCE3EF");
     public static readonly Color Muted = ColorTranslator.FromHtml("#6B7A99");
+
+    // GO CAR login look (red / near-black, from the new logo)
+    public static readonly Color GoRed = ColorTranslator.FromHtml("#D92F34");
+    public static readonly Color GoRedDark = ColorTranslator.FromHtml("#B8242A");
+    public static readonly Color GoRedSoft = ColorTranslator.FromHtml("#DF5D61");
+    public static readonly Color Ink = ColorTranslator.FromHtml("#100001");
+    public static readonly Color InkHover = ColorTranslator.FromHtml("#2B0B0E");
+    public static readonly Color CardBg = ColorTranslator.FromHtml("#F3F4F7");
 
     public static Font Bold(float size = 9F) => new("Segoe UI", size, FontStyle.Bold);
 
@@ -30,20 +38,22 @@ public static class Theme
         b.Font = Bold(9F);
     }
 
-    /// <summary>Button.Tag picks the style: ghost, accent, danger, success, secondary (default = primary blue).</summary>
+    /// <summary>Button.Tag picks the style: ghost, accent, danger, success, secondary, dark, brand (default = primary blue).</summary>
     public static void StyleButton(Button b)
     {
         var tag = b.Tag as string ?? (b.DialogResult == DialogResult.Cancel ? "secondary" : "");
         switch (tag)
         {
-            case "ghost": StyleButton(b, Navy, Color.White); b.FlatAppearance.MouseOverBackColor = NavyLight; break;
-            case "accent": StyleButton(b, Orange, Color.White); break;
+            case "ghost": StyleButton(b, Color.Transparent, Color.White); b.FlatAppearance.MouseOverBackColor = Color.Black; break;
+            case "accent": StyleButton(b, Color. Transparent, Color.White); break;
             case "danger": StyleButton(b, Red, Color.White); break;
+            case "dark": StyleButton(b, Ink, Color.White); b.FlatAppearance.MouseOverBackColor = InkHover; break;
+            case "brand": StyleButton(b, GoRed, Color.White); b.FlatAppearance.MouseOverBackColor = GoRedDark; break;
             case "success": StyleButton(b, Green, Color.White); break;
             case "secondary":
                 StyleButton(b, Color.White, Navy);
                 b.FlatAppearance.BorderSize = 1; b.FlatAppearance.BorderColor = Line; b.FlatAppearance.MouseOverBackColor = Bg; break;
-            default: StyleButton(b, Blue, Color.White); break;
+            default: StyleButton(b, Red, Color.White); break;
         }
     }
 
@@ -77,10 +87,10 @@ public static class Theme
         t.DrawItem += (s, e) =>
         {
             bool sel = e.Index == t.SelectedIndex;
-            using var back = new SolidBrush(sel ? Blue : Color.White);
+            using var back = new SolidBrush(sel ? Red : Color.White);
             e.Graphics.FillRectangle(back, e.Bounds);
             TextRenderer.DrawText(e.Graphics, t.TabPages[e.Index].Text, Bold(10F), e.Bounds,
-                sel ? Color.White : Navy, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
+                sel ? Color.White : Red, TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
         };
     }
 
@@ -105,8 +115,14 @@ public static class Theme
 
 public static class Brand
 {
-    public static readonly Image Logo = LoadImage("logo.png");
+    public static readonly Image Logo = LoadImage("logo_login.png");
     public static readonly Icon? AppIcon = LoadIcon();
+
+    static Image? _loginLogo, _loginBg;
+    /// <summary>GO CAR logo with transparent background (login card).</summary>
+    public static Image LoginLogo => _loginLogo ??= LoadImage("logo_login.png");
+    /// <summary>Red/black gradient behind the login card.</summary>
+    public static Image LoginBackground => _loginBg ??= LoadImage("loginbg.jpg");
 
     static Image LoadImage(string name)
     {

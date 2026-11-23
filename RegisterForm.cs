@@ -3,16 +3,30 @@ using System.Text.RegularExpressions;
 
 namespace DriveMate;
 
-public partial class RegisterForm : ThemedForm
+public partial class RegisterForm : CardForm
 {
     public User? Created { get; private set; }
     string idType = "";
     PhotoItem? idPhoto, selfie;
 
+    protected override RoundPanel? Card => pnlCard;
+
     public RegisterForm()
     {
         InitializeComponent();
+        picLogo.Image = Brand.LoginLogo;
         cboRole.SelectedIndex = 0;
+    }
+
+    protected override void OnLoad(EventArgs e)
+    {
+        base.OnLoad(e);
+
+        // Same button look as the login card (overrides the shared bold 9pt default)
+        btnCreate.Font = new Font("Segoe UI", 10.5F);
+        btnCancel.Font = new Font("Segoe UI", 10.5F);
+
+        ActiveControl = txtName;
     }
 
     Role CurrentRole => cboRole.SelectedIndex == 1 ? Role.Host : Role.Renter;
@@ -44,8 +58,13 @@ public partial class RegisterForm : ThemedForm
 
         var u = new User
         {
-            FullName = txtName.Text.Trim(), Email = mail, Phone = txtPhone.Text.Trim(), PasswordHash = Security.Hash(txtPass.Text),
-            Role = CurrentRole, IdType = idType, Verification = VerifStatus.Pending
+            FullName = txtName.Text.Trim(),
+            Email = mail,
+            Phone = txtPhone.Text.Trim(),
+            PasswordHash = Security.Hash(txtPass.Text),
+            Role = CurrentRole,
+            IdType = idType,
+            Verification = VerifStatus.Pending
         };
         Database.AddUser(u, idPhoto, selfie);
         Created = u;
@@ -53,5 +72,10 @@ public partial class RegisterForm : ThemedForm
                 (u.Role == Role.Renter ? "You can browse cars now and book once you're verified."
                                        : "Your cars will appear in the listings once you're verified."));
         DialogResult = DialogResult.OK;
+    }
+
+    private void pnlCard_Paint(object sender, PaintEventArgs e)
+    {
+
     }
 }

@@ -17,7 +17,10 @@
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
 		<EmbeddedResource Include="logo.png" LogicalName="logo.png" />
+		<EmbeddedResource Include="logo_login.png" LogicalName="logo_login.png" />
+		<EmbeddedResource Include="loginbg.jpg" LogicalName="loginbg.jpg" />
 		<EmbeddedResource Include="icon.ico" LogicalName="icon.ico" />
+		<EmbeddedResource Include="howitworks_bg.jpg" LogicalName="howitworks_bg.jpg" Condition="Exists('howitworks_bg.jpg')" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="Data\DriveMate.mdf">

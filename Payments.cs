@@ -21,7 +21,7 @@ public interface IPaymentGateway
 public class XenditHostedGateway : IPaymentGateway
 {
     public static readonly string TestSecretKey =
-        Environment.GetEnvironmentVariable("XENDIT_TEST_SECRET") ?? "";
+        Environment.GetEnvironmentVariable("XENDIT_TEST_SECRET") ?? "xnd_development_DzhUlBM4hdAuvVPt2a9jIFSSAtTxdThKmhWCaByVonwYLsQ2HbEwD2t6DzfAA";
 
     public static bool HasRealKey =>
         TestSecretKey.StartsWith("xnd_development_") && !TestSecretKey.Contains("replace_with");
